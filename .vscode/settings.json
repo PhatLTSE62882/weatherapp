@@ -1,0 +1,5 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/27ab26f5-61f2-4fd3-a901-0ca95313a664/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/weather-forecast-se1268",
+    "appService.deploySubpath": "",
+    "appService.showBuildDuringDeployPrompt": false
+}

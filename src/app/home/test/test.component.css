@@ -1,0 +1,282 @@
+p{
+    width: 100%;
+}
+.fixed {
+    width: auto;
+    min-width: 0;
+    padding: 0 16px;
+    position: relative;
+}
+.fixed .fixed {
+    padding: 0;
+}
+.my-city__clocks, .my-city__weather {
+    width: calc(100% - 310px);
+    float: left;
+}
+.my-city__clocks, .my-city__weather {
+    margin-bottom: 20px;
+    overflow-x: auto;
+    *zoom: 1;
+    overflow: auto;
+}
+.my-city__header {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 16px;
+    color: #454545;
+}
+.bg--grey {
+    background: #f1f1f1;
+}
+.my-city__items {
+    position: relative;
+}
+
+.my-city__items {
+    white-space: nowrap;
+    display: flex;
+    overflow: auto;
+}
+.my-city__item:first-child {
+    padding-left: 0;
+}
+.my-city__item {
+    padding: 0 10px;
+    width: 25%;
+    height: auto;
+    vertical-align: top;
+    position: relative;
+    overflow: hidden;
+    min-width: 160px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+}
+.my-city__title {
+    font-size: 16px;
+}
+.my-city__title {
+    font-size: 18px;
+    color: #454545;
+}
+a {
+    color: #556bb5;
+    text-decoration: none;
+}
+a {
+    background: transparent;
+}
+.my-city__wt-icon {
+    display: block;
+    height: 100px;
+    transition: all .2s ease-in-out;
+    transform-origin: left 50%;
+}
+img {
+    line-height: 1;
+    vertical-align: middle;
+}
+img, img:after, img:before {
+    box-sizing: content-box;
+}
+img {
+    border: 0;
+}
+.pdflexi-t--small {
+    padding-top: 6px;
+}
+.my-city__flag {
+    height: 16px;
+    margin-right: 5px;
+    vertical-align: baseline;
+    box-shadow: 0 0 1px rgba(0,0,0,.4);
+}
+.my-city__city {
+    font-weight: 700;
+}
+.my-city__wt {
+    color: #454545;
+    display: block;
+}
+.my-city__forecast, .my-city__temp {
+    white-space: nowrap;
+    line-height: 1.6;
+    font-size: 18px;
+}
+.my-city__wtdesc {
+    display: block;
+    font-size: 13px;
+}
+.accent, .soft {
+    color: #777;
+}
+.i-font {
+    font-family: iconfont!important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.my-city__time-wrap {
+    display: block;
+    font-size: 14px;
+}
+.my-city__digitalClock {
+    margin-top: 6px;
+    display: block;
+}
+.my-city__seconds {
+    color: #777;
+}
+.my-city__ampm {
+    margin-left: 2px;
+    color: #777;
+}
+#c218{
+    color:black
+}
+.my-city__date{
+    color:black
+}
+.tb-scroll {
+    padding-top: 0;
+}
+.tb-scroll {
+    overflow-x: scroll;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    background: #fff;
+}
+table, thead {
+    text-align: left;
+}
+.fw {
+    width: 100%;
+}
+.tb-theme {
+    margin-bottom: 12px;
+}
+.tb-theme thead {
+    background: #468ee5;
+    color: #fff;
+    border: 1px solid #468ee5;
+}
+.tb-theme thead th {
+    font-weight: 300;
+    position: relative;
+}
+td, th {
+    padding: 5px 9px;
+}
+th {
+    text-align: left;
+}
+.tb-theme thead h3 {
+    margin-top: 0;
+    font-weight: 300;
+    color: #fff;
+}
+.tb-header {
+    float: left;
+}
+h2, h3 {
+    margin: 15px 0 5px;
+}
+h1, h2, h3, h4, h5 {
+    color: #454545;
+    font-family: Helvetica,Arial,Sans-Serif;
+    line-height: 1.5;
+}
+.h3, h3 {
+    font-size: 18px;
+    font-weight: 700;
+}
+.tb-show {
+    float: right;
+    margin-left: 12px;
+}
+.tb-theme tbody, .tb-theme tfoot {
+    border: 1px solid #ccc;
+}
+.tb-theme td {
+    vertical-align: middle;
+}
+td {
+    vertical-align: top;
+    border: none;
+}
+td, th {
+    padding: 5px 9px;
+}
+.r, .rbi {
+    text-align: right!important;
+}
+td.r, th.r {
+    text-align: right;
+    white-space: nowrap;
+}
+.tb-show {
+    float: right;
+    margin-left: 12px;
+}
+.inline {
+    display: inline;
+}
+form, label {
+    position: relative;
+    font-size: 14px;
+}
+form {
+    margin: 0 0 20px;
+}
+.inline label, label.inline {
+    display: inline-block;
+    padding-right: 5px;
+}
+label {
+    cursor: pointer;
+    color: #454545;
+    display: block;
+    font-weight: 700;
+    line-height: 1.5;
+}
+.tb-theme label {
+    color: #fff;
+}
+.tb-theme select {
+    color: #454545;
+    font-weight: 400;
+}
+select {
+    line-height: 2em;
+    height: 2em;
+    background: #fff url(//c.tadst.com/gfx/n/select-arrow3.svg) no-repeat 100%;
+    background-size: auto 100%;
+    border: 1px solid rgba(0,0,0,.2);
+    vertical-align: middle;
+    border-radius: 0;
+    padding: 0 2.5em 0 .5em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+input {
+    line-height: normal;
+}
+.mgr10 {
+    margin-right: 10px!important;
+}
+.bi, .rbi {
+    border-right: 1px solid #ccc!important;
+}

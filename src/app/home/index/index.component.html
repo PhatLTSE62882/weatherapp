@@ -1,0 +1,207 @@
+<app-header></app-header>
+<section class="bg--grey pdflexi-t--small">
+    <!-- <input type="date" [(ngModel)]="this.time" name="time" (change)="onHandleChange()" /> -->
+    <div class="fixed" style="margin-left: 200px;width: 80%;">
+        <div class="fixed">
+            <h3 class="my-city__header">
+                My Cities (Personal World Clock) ...
+            </h3>
+
+            <div class="my-city__items" *ngIf="this.weatherHeader">
+                <ng-container *ngIf="this.weatherHeader[4]">
+                    <div class="my-city__item">
+                        <a href="/weather/vietnam/ho-chi-minh" title="Ho Chi Minh">
+                            <img class="my-city__wt-icon"
+                                src="../../../assets/WeatherCondition/{{this.weatherConditionSwitch(this.weatherHeader[4].weatherCondition)}}">
+                        </a>
+                        <a href="/weather/vietnam/ho-chi-minh" class="my-city__title">
+                            <img src="../../../assets/flags/{{this.flagImage(this.weatherHeader[4].country)}}"
+                                class="my-city__flag">
+                            <span class="my-city__city">{{this.weatherHeader[4].name}}</span></a>
+                        <span class="my-city__wt"><i class="fa fa-home soft">&nbsp; </i>
+                            <span class="my-city__temp">{{this.weatherHeader[4].tempure}}&nbsp;°C</span>
+                            <span class="my-city__wtdesc">{{this.weatherHeader[4].weatherCondition}}</span></span>
+                        <span class="my-city__time-wrap"><span class="my-city__digitalClock">
+                                <span id="c218dat" class="my-city__date">
+                                    {{this.timeZone(this.weatherHeader[4].name,this.weatherHeader[4].region)}}
+                                </span> </span></span>
+                    </div>
+                </ng-container>
+                <ng-container *ngFor="let weather of weatherHeader; index as i">
+                    <ng-container *ngIf="weather.id != this.weatherHeader[4].id">
+
+                        <div class="my-city__item">
+                            <a href="/weather/vietnam/ho-chi-minh" title="Ho Chi Minh">
+                                <img class="my-city__wt-icon"
+                                    src="../../../assets/WeatherCondition/{{this.weatherConditionSwitch(weather.weatherCondition)}}">
+                            </a>
+                            <a href="/weather/vietnam/ho-chi-minh" class="my-city__title">
+                                <img src="../../../assets/flags/{{this.flagImage(weather.country)}}"
+                                    class="my-city__flag">
+                                <span class="my-city__city">{{weather.name}}</span></a>
+                            <span class="my-city__wt">
+                                <span class="my-city__temp">{{weather.tempure}}&nbsp;°C</span>
+                                <span class="my-city__wtdesc">{{weather.weatherCondition}}</span></span>
+                            <span class="my-city__time-wrap"><span class="my-city__digitalClock">
+                                    <span id="c218dat" class="my-city__date">
+                                        {{this.timeZone(weather.name,weather.region)}}
+                                    </span> </span></span>
+                        </div>
+
+                    </ng-container>
+                </ng-container>
+
+            </div>
+        </div>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <section id="widget-ticket"
+            style="font-size: 15px;border: 1px solid #dd3333;color: #000; line-height: 1.2;border-radius: 4px;position: absolute;left: 0;display: inline-block;">
+            <ng-container *ngIf="this.world">
+                <ng-container *ngIf="this.responseCorona.response[0]">
+                <a id="world" style="color: #fff;border: 1px solid #dd3333;"
+                    title="Nguồn: Đại học Johns Hopkins, Ủy ban Y tế Nhà nước Trung Quốc, truyền thông các nước. Cập nhật lúc: 20:24 26/03/2020"
+                    class="corona-event"
+                    href="/dich-viem-phoi-corona.html?utm_source=self&amp;utm_medium=web&amp;utm_campaign=home_top_trending_topic_corona">
+                    <strong style="background-color: #dd3333;">CÙNG VƯỢT QUA COVID-19</strong>
+                    <span class="corona-event__country"
+                        style="color:black;padding: 0 10px;border-right: 1px solid #dd3333;font-weight: bold;">THẾ
+                        GIỚI</span>
+                    <span class="stats-info" style="padding: 0 5px;">
+                        <span class="corona-event__recover" style="text-align: center;padding: 0 10px;color:black;">CA
+                            PHỤC HỒI: <span style="color: #3392A1;font-weight: bold;">{{formatNumber(this.responseCorona.response[0].cases.recovered)}}</span></span>
+                        <span class="corona-event__case" style="text-align: center;padding: 0 10px;color:black;">CA
+                            NHIỄM: <span style="color:#d23e2c;font-weight: bold;">{{formatNumber(this.responseCorona.response[0].cases.total)}}</span></span>
+                        <span class="corona-event__death" style="text-align: center;padding: 0 10px;color:black;">CA TỬ
+                            VONG: <span style="color:black;font-weight: bold;">{{formatNumber(this.responseCorona.response[0].deaths.total)}}</span></span>
+                    </span>
+                </a>
+            </ng-container>                               
+        </ng-container>
+
+            <ng-container *ngIf="!this.world">
+                <ng-container *ngIf="this.responseCorona.response[1]">
+                <a id="world" style="color: #fff;border: 1px solid #dd3333;"
+                    title="Nguồn: Đại học Johns Hopkins, Ủy ban Y tế Nhà nước Trung Quốc, truyền thông các nước. Cập nhật lúc: 20:24 26/03/2020"
+                    class="corona-event"
+                    href="/dich-viem-phoi-corona.html?utm_source=self&amp;utm_medium=web&amp;utm_campaign=home_top_trending_topic_corona">
+                    <strong style="background-color: #dd3333;">CÙNG VƯỢT QUA COVID-19</strong>
+                    <span class="corona-event__country"
+                        style="color:black;padding: 0 10px;border-right: 1px solid #dd3333;font-weight: bold;">{{this.responseCorona.response[1].country}}</span>
+                    <span class="stats-info" style="padding: 0 5px;">
+                        <span class="corona-event__recover" style="text-align: center;padding: 0 10px;color:black;">CA
+                            PHỤC HỒI: <span style="color: #3392A1;font-weight: bold;">{{formatNumber(this.responseCorona.response[1].cases.recovered)}}</span></span>
+                        <span class="corona-event__case" style="text-align: center;padding: 0 10px;color:black;">CA
+                            NHIỄM: <span style="color:#d23e2c;font-weight: bold;">{{formatNumber(this.responseCorona.response[1].cases.total)}}</span></span>
+                        <span class="corona-event__death" style="text-align: center;padding: 0 10px;color:black;">CA TỬ
+                            VONG: <span style="color:black;font-weight: bold;">{{formatNumber(this.responseCorona.response[1].deaths.total)}}</span></span>
+                    </span>
+                </a>
+            </ng-container>
+            </ng-container>
+            <!-- <a id="country" style="color: #fff;border: 1px solid #dd3333;" title="Nguồn: Đại học Johns Hopkins, Ủy ban Y tế Nhà nước Trung Quốc, truyền thông các nước. Cập nhật lúc: 20:24 26/03/2020"
+                class="corona-event"
+                href="/dich-viem-phoi-corona.html?utm_source=self&amp;utm_medium=web&amp;utm_campaign=home_top_trending_topic_corona">
+                <strong style="background-color: #dd3333;">CÙNG VƯỢT QUA COVID-19</strong>
+                <span class="corona-event__country" style="color:black;padding: 0 10px;border-right: 1px solid #dd3333;font-weight: bold;">THẾ GIỚI</span>
+                <span class="stats-info" style="padding: 0 5px;">
+                    <span class="corona-event__recover" style="text-align: center;padding: 0 10px;color:black;">CA PHỤC HỒI: <span style="color: #3392A1;font-weight: bold;">105.721</span></span>
+                    <span class="corona-event__case" style="text-align: center;padding: 0 10px;color:black;">CA NHIỄM: <span style="color:#d23e2c;font-weight: bold;">468.732</span></span>
+                    <span class="corona-event__death" style="text-align: center;padding: 0 10px;color:black;">CA TỬ VONG: <span style="color:black;font-weight: bold;">21.464</span></span>
+                </span>
+            </a> -->
+        </section>
+
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <section class="fixed">
+            <div class="row" style="width: 100%;">
+                <div class="tb-scroll" style="width: 100%;">
+                    <table class="zebra fw tb-theme table table-striped" style="width: 100%;">
+                        <thead>
+                            <tr>
+                                <th colspan="8">
+                                    <h3 class="tb-header">Local Time and Weather in Asia </h3>
+                                    <div class="tb-show">
+                                        <form id="wc-sort" name="wc-sort" class="inline" action="/scripts/gowc.php"
+                                            aria-hidden="true" method="get"><label for="sort">Sort By: </label><select
+                                                id="sort" name="sort" onchange="this.form.submit()">
+                                                <option value="0" selected="">City</option>
+                                                <option value="1">Country</option>
+                                                <option value="2">Time</option>
+                                                <option value="6">Temperature</option>
+                                            </select><input type="hidden" name="url" value="/weather/"><input
+                                                type="hidden" name="args" value="continent=asia"></form>
+                                    </div>
+                                    <div class="tb-show">
+                                        <form id="wc-sort" name="wc-sort" class="inline" action="/scripts/gowc.php"
+                                            aria-hidden="true" method="get"><label for="sort">Region: </label><select
+                                                id="sort" name="sort" onchange="this.form.submit()">
+                                                <option value="0" selected="">Asia</option>
+                                                <option value="1">Europe</option>
+                                                <option value="2">Time</option>
+                                                <option value="6">Temperature</option>
+                                            </select><input type="hidden" name="url" value="/weather/"><input
+                                                type="hidden" name="args" value="continent=asia"></form>
+                                    </div>
+                                    <div class="tb-show mgr10">
+                                        <form id="wc-shown" name="wc-shown" class="inline" action="/scripts/gowc.php"
+                                            aria-hidden="true" method="get"><label for="pop">Time shown:
+                                            </label><select id="pop" name="low" onchange="this.form.submit();">
+                                                <option value="c">Today</option>
+                                                <option value="4">Tomorroww</option>
+
+                                            </select><input type="hidden" name="url" value="/weather/"><input
+                                                type="hidden" name="args" value="continent=asia"></form>
+                                    </div>
+                                </th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ng-container *ngIf="this.weathers">
+                                <ng-container *ngFor="let weather of weathers;index as i">
+                                    <ng-container *ngIf="i%2 == 0">
+                                        <tr>
+                                            <td><a routerLink="detail"
+                                                    [queryParams]="{name:weather.name}">{{weather.name}}</a><span
+                                                    id="p0s" class="wds"></span></td>
+                                            <td id="p0" class="r">{{timeZone(weather.name,weather.region)}}</td>
+                                            <td class="r"><img
+                                                    src="../../../assets/WeatherCondition/{{this.weatherConditionSwitch(weather.weatherCondition)}}"
+                                                    alt="Passing clouds. Mild." title="Passing clouds. Mild." width="40"
+                                                    height="40"></td>
+                                            <td class="rbi">{{weather.tempure}}&nbsp;°C</td>
+                                            <ng-container *ngIf="weathers[i+1]">
+
+                                                <td><a routerLink="detail"
+                                                        [queryParams]="{name:weathers[i+1].name}">{{weathers[i+1].name}}</a><span
+                                                        id="p100s" class="wds"></span></td>
+                                                <td id="p100" class="r">
+                                                    {{timeZone(weathers[i+1].name,weathers[i+1].region)}}</td>
+                                                <td class="r"><img
+                                                        src="../../../assets/WeatherCondition/{{this.weatherConditionSwitch(weathers[i+1].weatherCondition)}}"
+                                                        alt="Clear. Cool." title="Clear. Cool." width="40" height="40">
+                                                </td>
+                                                <td class="rbi">{{weathers[i+1].tempure}}&nbsp;°C</td>
+
+                                            </ng-container>
+                                        </tr>
+                                    </ng-container>
+
+                                </ng-container>
+                            </ng-container>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+</section>

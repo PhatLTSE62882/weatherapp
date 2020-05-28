@@ -1,0 +1,92 @@
+<app-header></app-header>
+
+<div style="width: 50%;margin-left:25%;">
+    <div class="card text-white bg-info mb-3">
+        <div class="card-header">Weather Information</div>
+        <div class="card-body">
+
+            <form  #form="ngForm" (submit)="onSubmit(form)">
+
+                 <input name="weatherId" [(ngModel)]="weatherDetail.weatherId" type="hidden"/>
+                <div class="form-group">
+                    <label>City</label>
+                    <input type="text" name="name" [(ngModel)]="weatherDetail.name" class="form-control" id="" placeholder="City">
+                </div>
+                <div class="form-group">
+                    <label>Country</label>
+                    <input type="text" name="country" [(ngModel)]="weatherDetail.weather.country" class="form-control" id="" placeholder="Country">
+                </div>
+
+                <div class="form-group">
+
+                    <label>Region</label>
+                    <select name="" id="input" name="region" [(ngModel)]="weatherDetail.weather.region" class="form-control" required="required">
+                        <option value="Asia" >Asia</option>
+                        <option value="Europe">Europe</option>
+                        <option value="Africa">Africa</option>
+                        <option value="Americas">Americas</option>
+                        <option value="Oceania">Oceania</option>
+                    </select>
+
+                </div>
+                <div class="form-row">
+                    
+                 
+                    
+                   
+                    <div class="form-group col-md-6">
+                      <label for="inputPassword4">Rain</label>
+                      <input type="text" name="rain" [(ngModel)]="weatherDetail.rain" class="form-control" id="inputPassword4" >
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Wind Speed</label>
+                        <input type="text" name="windSpeed" [(ngModel)]="weatherDetail.windSpeed" class="form-control" id="inputPassword4" >
+                      </div>
+                  </div>
+                  
+                  <div class="form-row">
+                      
+                      <div class="panel panel-danger">
+                            <div class="panel-heading">
+                                  <h3 class="panel-title">Tempurature</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-group col-md-6">
+                                    <label for="inputEmail4">Morning <sup>o</sup> C </label>
+                                    <input type="text" name="tempureMorning" [(ngModel)]="weatherDetail.tempureMorning" class="form-control" id="inputEmail4">
+                                  </div>
+                                  <div class="form-group col-md-6">
+                                      <label for="inputEmail4">Night <sup>o</sup> C </label>
+                                      <input type="text" name="tempureNight" [(ngModel)]="weatherDetail.tempureNight" class="form-control" id="inputEmail4">
+                                   
+                                    </div>
+                            </div>
+                      </div>
+                      
+                  </div>
+                  
+                  <div class="form-group">
+                    <label>Weather Condition</label>
+                    <select name="" id="input" name="weatherCondition" [(ngModel)]="weatherDetail.weather.weatherCondition" class="form-control" required="required">
+                        <option value="Sun shine" >Sun shine</option>
+                        <option value="Rain">Rain</option>
+                        <option value="Fog">Fog</option>
+                        <option value="Dry">Dry</option>
+                        <option value="Cloud">Cloud</option>
+                    </select>
+                </div>
+                  <div class="form-group">
+                    <label>Time</label>
+                    <input type="date"  name="date" [(ngModel)]="weatherDetail.date" class="form-control" id="" placeholder="Input field">
+                </div>
+                <button type="submit" class="btn btn-success">Save</button>
+                &nbsp;
+                <button type="reset" class="btn btn-danger">Reset</button>
+
+            </form>
+
+        </div>
+        <div class="card-footer">My coding channel:<a href="https://github.com/lamthanhphat98" style="color:white"> PHATFAKER</a></div>
+    </div>
+
+</div>

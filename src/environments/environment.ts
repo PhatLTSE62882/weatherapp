@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  API_URL:'https://azuredevops-2-dev-as.azurewebsites.net',
+  //API_URL:'https://localhost:44333',
+  LOGIN_SUCCESSFULL:"LOGGED",
+  LOGOUT:"LOGOUT",
 };
 
 /*
